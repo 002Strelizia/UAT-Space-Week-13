@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+    This is my UAT Space Page.
+    It was created in my CSC102 class from Spring 2023.
+    This is for my week 4 blastoff assignment.
+    
+    Created by: Emily Parra
+    emikello@uat.edu
+-->
+<html>
+
+<head>
+    <title>
+        Emily's UATSpace Page
+    </title>
+    <!--
+        These lines of code call my JavaScript files into the HTML
+        file for referencing.
+        They also create the table needed for the Data Type and Reading
+        values below.
+    -->
+    <script src="code.js"></script>
+    <script src="code2.js"></script>
+    <script src="dataLoader.js"></script>
+    <link rel="stylesheet" href="UATSpaceStyle.css">
+
+    <script>
+        var theTime = new Date();
+        var timeInterval = 5000;
+        var lastIteration = 0;
+        var running = true;
+        var index = 0;
+        var timer;
+        var data = getData();
+    </script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="UAT_Space.jpg">
+    <h1>
+        Welcome to the UAT Space Page!
+    </h1>
+    <!-- This is my audio section, it allows my website's visitors 
+        to play space music while navigating my site!
+        
+        Notes:
+        audio controls - allows the user to play, pause, and control volume for audio.
+        Credit for audio: penguinmusic @ https://pixabay.com/music/search/space/
+    -->
+    <h4>
+        Audio: Space Atmospheric Background by penguinmusic
+    </h4>
+    <audio controls>
+        <source src="space-chillout-14194.mp3" type="audio/mpeg">
+    </audio>
+    <br>
+    <br>
+    <br>
+    <!--
+        This is the code for my launch data table.
+        There are two columns, Data Type and Reading, as well as several rows.
+        The rows contain data types (tr) and readings (td) for the space 
+        launch which fall under their corresponding columns.
+    -->
+    <table id="data" border="2" width="70%">
+        <col style="width: 35%">
+        <col style="width: 35%">
+        <thead>
+            <th>Data Type</th>
+            <th>Reading</th>
+        </thead>
+        <tr id="time_seconds">
+        <tr id="latitude">
+        <tr id="longitude">
+        <tr id="gps_altitude">
+        <tr id="bmp_altitude">
+        <tr id="bmp_pressure">
+        <tr id="bmp_temperature">
+        <tr id="dig_temperature">
+        <tr id="css_temperature">
+        <tr id="css_eco2">
+        <tr id="css_tvoc">
+        <tr id="uv">
+        <tr id="accelx">
+        <tr id="accely">
+        <tr id="accelz">
+        <tr id="magneticx">
+        <tr id="magneticy">
+        <tr id="magneticz">
+        <tr id="gyrox">
+        <tr id="gyroy">
+        <tr id="gyroz">
+    </table>
+    <br>
+    <br>
+    The current time is: <div id="clockTime"> Press Start to display current time</div><br>
+    <br>
+    <br>
+    <button class="startbutton" id="startButton" onclick="startFun();">Start</button>
+    <button class="stopbutton" id="stopButton" onclick="stopFun();">Stop</button>
+    <br>
+    <br>
+    <!--
+        This is my BlastOff Timer code. It includes a stop and start button
+        for the BlastOff Timer which counts down in increments of 5 seconds,
+        starting from 50 and ending at 0.
+    -->
+    <h2>Blastoff Timer</h2>
+    <div id="blastoffDis">Press start to begin the countdown.</div>
+    <br>
+    <br>
+    <button id="startButton" onclick="startButtonClick();">Start</button>
+    <button id="stopButton" onclick="stopButtonClick();">Stop</button>
+    <br>
+    <br>
+    <!--
+        This is the code for my Craps game and Sandbox. 
+        Users can play Craps while they wait for Blastoff.
+        The Sandbox is my designated area for experimentation with HTML.
+    -->
+    <h2>Craps Game</h2>
+    <div id="die1Res">Die 1 Result</div><br>
+    <div id="die2Res">Die 2 Result</div><br>
+    <div id="diceSum">Sum of die 1 and die 2</div><br>
+    <div id="gameRes">Game Result</div>
+    <br>
+    <button onclick="playCraps()">Play Craps!</button>
+    <br>
+    <br>
+    <h2>Sandbox</h2>
+    <br>
+    <div id="sandboxText"> Text to play with</div>
+    <script>
+        var phunText1 = "This is my ";
+        var phunText2 = "phun text.";
+        document.getElementById("sandboxText").innerHTML = phunText1 + phunText2;
+    </script>
+</body>
+
+</html>
